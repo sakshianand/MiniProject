@@ -1,0 +1,60 @@
+<html>
+<head>
+ <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+<link rel="stylesheet" href="css/animate.css">
+</head>
+<body>
+<div class="container" id="full">
+
+<div class="row">
+<div class="col s8 offset-s3">
+<h5 ><b>Update Block and Room</b></h5>
+</div>
+<div class="col s6 offset-s3"style="margin-top: 8%;"> 
+
+<form method = "post" action ="updateAdd.php" class="wow slideInDown">
+
+  <div class="input-field">
+    <select name ="block" id ="block">
+  <option value="" disabled selected>Choose your option</option>
+       <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+</select>
+ <label>Block</label>
+
+</div>
+
+<div class="input-field">
+<input  type="text" class="validate" name="room" id ="room">
+<label for="icon_prefix">New Room Number</label>
+</div>
+<div class="input-field">
+<input  type="text" class="validate" name="pass" id ="pass">
+<label for="icon_prefix">Enter Your Password</label>
+</div>
+
+
+<Button class="waves-effect waves-light btn" type="submit" style="margin-top: 9%; margin-left: 33%;">Update</button>
+</Button>
+
+</form>
+</div>
+</div>
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+<script type="text/javascript" src="js/seller.js"></script>
+<script src="js/wow.min.js"></script>
+              <script>
+              new WOW().init();
+              </script>
+</body>
+</html>

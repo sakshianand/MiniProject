@@ -223,7 +223,7 @@ while ($row =  mysqli_fetch_array($r))
      $_SESSION['a']=$total;
 
  ?></span></li>
-	 <li><span><button  href="checkout.php" onclick="checkout.php">Next</button></span></li>
+	 <li><span><a href="checkout.php"><button>Next</button></a></span></li>
 			
 			<div class="clearfix"> </div>
 			</ul>

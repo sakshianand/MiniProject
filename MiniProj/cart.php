@@ -191,7 +191,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		  <ul class="cart-header">
 		   <div class="close1"> </div>
 			<li class="ring-in"><a href="single.html" ><img src="<?php 
-	   		     		$filepath[] = $row['img_path'];  print $filepath[0]; ?>" class="img-responsive" alt=""></a>
+	   		     		$filepath = $row['img_path'];  print $filepath; ?>" class="img-responsive" alt=""></a>
 			</li>
 			
 			<li><span><?php $ProductName = $row['ProductName']; print $ProductName; ?></span></li>

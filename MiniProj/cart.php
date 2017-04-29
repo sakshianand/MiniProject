@@ -175,11 +175,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		  <ul class="unit">
 		  
 			<li><span>Item</span></li>
-			<li><span></span></li>
+		
 			<li><span>Product Name</span></li>
-<li><span></span></li>
+
 			<li><span>Price</span></li>
-			
+			<li><span>Seller Name</span></li>
+			<li><span>Contact Number</span></li>
 			
 			<div class="clearfix"> </div>
 		  </ul>
@@ -192,11 +193,50 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<li class="ring-in"><a href="single.html" ><img src="<?php 
 	   		     		$filepath[] = $row['img_path'];  print $filepath[0]; ?>" class="img-responsive" alt=""></a>
 			</li>
-			<li><span></span></li>
-			<li><span><?php $ProductName = $row['ProductName']; print $ProductName; ?></span></li>
-			<li><span></span></li>
-			<li><span><?php $price = $row['Price']; print $price; ?></span></li>
 			
+			<li><span><?php $ProductName = $row['ProductName']; print $ProductName; ?></span></li>
+			
+			<li><span><?php $price = $row['Price']; print $price; ?></span></li>
+			<li>
+			<span>
+			<?php
+							$reg[] = $row['reg']; 
+							//echo $row['reg'];
+							$a = "select * from additem where ProductName = '$ProductName'";
+							$b= mysqli_query($conn,$a);
+							$tow = mysqli_fetch_assoc($b);
+							$regi=$tow['reg'];
+							$c= "select * from seller where Reg = '$regi'";
+							$d=mysqli_query($conn,$c);
+							$tow1 = mysqli_fetch_assoc($d);
+							echo $tow1['Name'];
+							//$phone = $tow['Phone'];
+							//$name = $tow['Name']; echo $name;
+							
+
+			?>
+			</span>
+			</li>
+				<li>
+			<span>
+			<?php
+							$reg[] = $row['reg']; 
+							//echo $row['reg'];
+							$a = "select * from additem where ProductName = '$ProductName'";
+							$b= mysqli_query($conn,$a);
+							$tow = mysqli_fetch_assoc($b);
+							$regi=$tow['reg'];
+							$c= "select * from seller where Reg = '$regi'";
+							$d=mysqli_query($conn,$c);
+							$tow1 = mysqli_fetch_assoc($d);
+							echo $tow1['Phone'];
+							//$phone = $tow['Phone'];
+							//$name = $tow['Name']; echo $name;
+							
+
+			?>
+			</span>
+			</li>
 			<div class="clearfix"> </div>
 			</ul>
 			<?php } ?>

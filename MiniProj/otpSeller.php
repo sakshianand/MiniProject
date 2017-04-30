@@ -87,5 +87,5 @@ curl_close($ch);
 
 echo $output;*/
 
-header('Location: http://localhost/MiniProj/otpSeller.html');
+header('Location: otpSeller.html');
  ?>

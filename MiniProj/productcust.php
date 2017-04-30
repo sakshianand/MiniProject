@@ -265,7 +265,7 @@ $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + 
 				<!---->
 				<div class="col-md-9 product-price1">
 					<div class="mens-toolbar">
-						<p class="showing">Showing 1–9 of 21 results</p>
+						
 	                 
     	      
                 	<div class="clearfix"></div>		

@@ -38,7 +38,7 @@ $q = "update additem set status = 0 where ProductName = '{$ProductName}'";
 $g = mysqli_query($conn,$q);
 $l = "insert into review(pname,seller,customer,customername)values('$ProductName','$registration','$reg','$name')";
 $a = mysqli_query($conn,$l);
-/*
+
 $authKey = "137617Avrt117V587dfc16";
 
 //Multiple mobiles numbers separated by comma
@@ -150,7 +150,7 @@ if(curl_errno($ch))
 
 curl_close($ch);
 
-echo $output;*/
+echo $output;
 
 }
 

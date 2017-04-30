@@ -1,12 +1,11 @@
-<?php 
-session_start();
-if(isset($_SESSION['name'])){
-	header("location:productcust.php");
-}
-
-?>
+<!--A Design by W3layouts 
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 <head>
 <title>VIT Emart</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
@@ -47,6 +46,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </head>
 <body> 
+<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <!--header-->	
 <div class="header">
 <!-- 	<div class="header-top">
@@ -90,5 +94,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  	</div>	
 
 </div>
+
 </body>
 </html>

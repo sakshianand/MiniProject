@@ -13,7 +13,7 @@ if($row['Reg'] == $reg && $row['Password'] == $pass)
 { 
 
 	$_SESSION['name'] = $row['Name'];
-	header('Location: http://localhost/MiniProj/dashboard.php');
+	header('Location: dashboard.php');
 }
 else
 {

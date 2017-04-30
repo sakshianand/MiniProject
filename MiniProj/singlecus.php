@@ -84,20 +84,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="header-bottom bottom-com">
 			<div class="container">			
 				<div class="logo">
-					<h1><a href="index.html">Welcome <?php echo $_SESSION['name']; ?></a></h1>
+					<h1><a href="">Welcome <?php echo $_SESSION['name']; ?></a></h1>
 				</div>
 				<div class="top-nav">
 				<!-- start header menu --
 		 <!---->
 
 					<!---->
-					<div class="cart box_1">
-						<a href="checkout.html">
-						<h3> <div class="total">
-							<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
-							<img src="images/cart.png" alt=""/></h3>
-						</a>
-						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+					
+						
 						<div class="clearfix"> </div>
 					</div>
 					<!---->
@@ -110,7 +105,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 <!---->
 <div class="container">
-	<h6 class="dress"><a href="index.html">Home</a> <i> </i> Product </h6>
+	<h6 class="dress"><a href="productcust.php">Home</a> <i> </i> Product </h6>
 </div>
 <div class="back">
 	<h2><?php while($row = mysqli_fetch_assoc($res)){ $ProductName[] = $row['ProductName']; print $ProductName[0];  ?></h2>
@@ -182,9 +177,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							
 							<h5 class="item_price">Price:<?php $price[] = $row['Price']; echo $price[0]; ?></h5>
-							<p><?php $Description[] = $row['Description']; print $Description[0]; ?></p>
+							<h3 class="item_price"><?php $Description[] = $row['Description']; print $Description[0]; ?></h3>
 							
-								<a href="#" class="add-cart item_add">CHECKOUT</a>
+								<a href="productcust.php" class="add-cart item_add">GO BACK</a>
 							
 						</div>
 					</div>

@@ -85,7 +85,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="header-bottom bottom-com">
 			<div class="container">			
 				<div class="logo">
-					<h1><a href="index.html">Welcome <?php echo $_SESSION['name']; ?> </a></h1>
+					<h1><a href="product.php">Welcome <?php echo $_SESSION['name']; ?> </a></h1>
 				</div>
 				<div class="top-nav">
 				<!-- start header menu -->
@@ -169,7 +169,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							
 							<h5 class="item_price">Price:<?php $price[] = $row['Price']; echo $price[0]; ?></h5>
-							<p><?php $Description[] = $row['Description']; print $Description[0]; ?></p>
+							<p>Description: <?php $Description[] = $row['Description']; print $Description[0]; ?></p>
 							<?php $avail[]=$row['available']; echo'<p>Status: ';if($avail[0]==0){echo "Sold";} else{
 								echo "Unsold";
 							} echo'</p>';?>
@@ -184,7 +184,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="cd-tabs">
 			<nav>
 				<ul class="cd-tabs-navigation">
-					<li><a data-content="television" href="#0" class="selected ">Reviews (1)</a></li>
+					
 					
 				</ul> 
 			</nav>
@@ -221,20 +221,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </li>
 <li data-content="television" class="selected">
 	<div class="comments-top-top">
-				<div class="top-comment-left">
-					<img class="img-responsive" src="images/co.png" alt="">
-				</div>
-				<div class="top-comment-right">
-					<h6><a href="#">Hendri</a> - September 3, 2014</h6>
-					<ul class="star-footer">
-										<li><a href="#"><i> </i></a></li>
-										<li><a href="#"><i> </i></a></li>
-										<li><a href="#"><i> </i></a></li>
-										<li><a href="#"><i> </i></a></li>
-										<li><a href="#"><i> </i></a></li>
-									</ul>
-									<p>Wow nice!</p>
-				</div>
+				
+			
 				<div class="clearfix"> </div>
 				
 			</div>

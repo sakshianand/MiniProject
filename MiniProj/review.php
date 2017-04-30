@@ -48,59 +48,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="top-nav">
 				<!-- start header menu -->
 		<ul class="megamenu skyblue menu-in">
-			<li><a  href="index.html">Home</a></li>
+			<li><a  href="productcust.php">Home</a></li>
 			
-			<li class="active grid"><a  href="#">Pages</a>
-				<div class="megapanel">
-					<div class="row">
-						<div class="col1">
-							<div class="h_nav">
-								<h4>SUBMENU1</h4>
-								<ul>
-									<li><a href="about.html">About</a></li>
-									<li><a href="product.html">men</a></li>
-									<li><a href="product.html">women</a></li>
-									<li><a href="product.html">accessories</a></li>
-									
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>SUBMENU2</h4>
-								<ul>
-									<li><a href="product.html">trends</a></li>
-									<li><a href="product.html">sale</a></li>
-									<li><a href="product.html">style videos</a></li>
-									<li><a href="product.html">accessories</a></li>
-									<li><a href="product.html">kids</a></li>
-									<li><a href="product.html">style videos</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1 col5">
-							<iframe src="https://player.vimeo.com/video/10777111?color=ffffff&title=0&byline=0&portrait=0"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
-						</div>
-						
-					</div>
-					
-    				</div>
+			<li class="active grid"><a  href="review.php">Purchase History</a>
+				
 				</li>	
 		
 					
 				</li>
 		 </ul> 
 		 <!---->
-		 <div class="search-in" >
-			<div class="search" >
-						<form action="search.html">
-							<input type="text" value="Keywords" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Keywords';}" class="text">
-							<input type="submit" value="SEARCH">
-						</form>
-							<div class="close-in"><img src="images/close.png" alt="" /></div>
-					</div>
-						<div class="right"><button> </button></div>
-				</div>
+		 
 						<script type="text/javascript">
 							$('.search').hide();
 							$('button').click(function (){

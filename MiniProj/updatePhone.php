@@ -8,5 +8,5 @@ $sql = "update customer set Phone = '$phone'  where Password = '$pass' and Reg =
 $retval = mysqli_query( $conn, $sql );
 if($retval){
 echo "Details updated.";
-header('refresh:2; url= http://localhost/MiniProj/updateCustomer.html');}
+header('refresh:2; url= updateCustomer.html');}
 ?>

@@ -4,7 +4,7 @@ include_once("Connection.php");
 $email = $_POST['email'];
 
 $pass = $_POST['pass'];
-$sql = "update customer set Email = '$email'  where Password = '$pass' and Reg = '{$_SESSION['reg']}'";
+$sql = "update seller set Email = '$email'  where Password = '$pass' and Reg = '{$_SESSION['reg']}'";
 $retval = mysqli_query( $conn, $sql );
 if($retval){
 echo "Details updated.";

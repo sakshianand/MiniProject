@@ -46,7 +46,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="header-bottom bottom-com">
 			<div class="container">			
 				<div class="logo">
-					<h1><a href="index.html">Welcome <?php  echo $_SESSION['name']; ?></a></h1>
+					<h1><a href="dashboard.php">Welcome <?php  echo $_SESSION['name']; ?></a></h1>
 				</div>
 				<div class="top-nav">
 				<!-- start header menu -->
@@ -93,7 +93,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 <!---->
 <div class="container">
-	<h6 class="dress"><a href="index.html">Home</a>&nbsp;&nbsp; &nbsp;&nbsp; <a href="logout.php">Logout</a></h6>
+	<h6 class="dress"><a href="dashboard.php">Home</a>&nbsp;&nbsp; &nbsp;&nbsp; <a href="logout.php">Logout</a></h6>
 </div>
 <div class="back">
 	<h2>PRODUCTS</h2>
@@ -224,15 +224,7 @@ $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + 
 	   		     	<div class="clearfix"> </div>
 		        	</div>
 		        </div>
-		        <ul class="start">
-					<li><a href="#"><i> </i></a></li>
-					<li><span>1</span></li>
-					<li class="arrow"><a href="#">2</a></li>
-					<li class="arrow"><a href="#">3</a></li>
-					
-					
-					<li><a href="#"><i class="next"> </i></a></li>
-				</ul>
+		      
 				<div class="clearfix"> </div>
 				</div>
 				

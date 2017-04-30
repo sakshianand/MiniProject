@@ -1,6 +1,8 @@
 <?php 
 session_start();
 include_once("Connection.php");
+
+
 if(isset($_POST['search'])){
 	$searchq=$_POST['search'];
 	$result1 ="select * from additem where ProductName LIKE '$searchq%' ";
@@ -15,7 +17,6 @@ $r = mysqli_query($conn,$result);
 $count = mysqli_num_rows($r);
 }
  
-
 
 ?>
 <!DOCTYPE html>
@@ -75,7 +76,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		 <div class="search-in" >
 			<div class="search" >
 						<form action="productcust.php" method="post">
-							<input type="text" value="Keywords" name="search"  class="text">
+							<input type="text" value="" name="search"  class="text" color="white">
 							<input type="submit" value="SEARCH" name="">
 						</form>
 							<div class="close-in"><img src="images/close.png" alt="" /></div>
@@ -98,10 +99,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="cart box_1">
 						<a href="cart.php">
 						<h3> <div class="total">
-							<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
+							
 							<img src="images/cart.png" alt=""/></h3>
 						</a>
-						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+						
 						<div class="clearfix"> </div>
 					</div>
 					<!---->
@@ -114,7 +115,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 <!---->
 <div class="container">
-	<h6 class="dress"><a href="index.html">Home</a> &nbsp; &nbsp;&nbsp; &nbsp;<a href="logout.php">Logout</a> </h6>
+	<h6 class="dress"><a href="productcust.php">Home</a> &nbsp; &nbsp;&nbsp; &nbsp;<a href="logout.php">Logout</a> </h6>
 </div>
 <div class="back">
 	<h2>PRODUCTS</h2>
@@ -240,12 +241,13 @@ $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + 
 							?>
 					<div class="product-go">
 						<div class=" fashion-grid">
-									<a href="single.html"><img class="img-responsive " src="<?php 
+								<?php 
+	   		     		$id= $tow3['id']; echo'<a  href="singlecus.php?id='.$id.'">';?><img class="img-responsive " src="<?php 
 	   		     		$filepath = $tow3['img_path'];  print $filepath; ?>" alt=""></a>
 									
 								</div>
 							<div class=" fashion-grid1">
-								<h6 class="best2"><a href="single.html" ><?php echo $tow3['ProductName']; ?></a></h6>
+								<h6 class="best2"><?php echo'<a href="singlecus.php?id='.$id.'" >';?><?php echo $tow3['ProductName']; ?></a></h6>
 								
 								<span class=" price-in1"><?php echo "Rs". $tow3['Price']; ?> </span>
 							</div>
@@ -324,15 +326,7 @@ $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + 
 		        </div>
 				</div>
 
-				<ul class="start">
-					<li><a href="#"><i> </i></a></li>
-					<li><span>1</span></li>
-					<li class="arrow"><a href="#">2</a></li>
-					<li class="arrow"><a href="#">3</a></li>
-					
-					
-					<li><a href="#"><i class="next"> </i></a></li>
-				</ul>
+				
 			<div class="clearfix"> </div>
 		    </div>
 				<div class="clearfix"> </div>
@@ -353,22 +347,7 @@ $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + 
 <!---->
 <div class="footer">
 		<div class="container">
-			<div class="col-md-4 footer-top">
-				<h3>QUICK CONTACT</h3>
-				<form>
-						
-						<input type="text" value="ENTER YOUR NAME*" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='ENTER YOUR NAME*';}">
-						
-						<input type="text" value="ENTER YOUR EMAIL*" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='ENTER YOUR EMAIL*';}">
-						
-						<input type="text" value="ENTER YOUR PHONE" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='ENTER YOUR PHONE';}">
-					
-						<textarea cols="77" rows="6" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'ENTER YOUR MESSAGE*';}">ENTER YOUR MESSAGE*</textarea>
-						
-							<input type="submit" value="SEND MESSAGE" >
-						
-					</form>
-
+			
 			</div>
 
 			
@@ -413,7 +392,7 @@ $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + 
              $(document).ready(function(){
     $(".add").click(function(){
      var id = $(this).attr('id');
-    alert(id);
+   // alert(id);
      $("#full").load("ecart.php",{'id': id});
 
     });

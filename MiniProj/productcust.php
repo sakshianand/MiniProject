@@ -1,9 +1,22 @@
 <?php 
 session_start();
 include_once("Connection.php");
-$result ="select * from additem where available = 1";
+if(isset($_POST['search'])){
+	$searchq=$_POST['search'];
+	$result1 ="select * from additem where ProductName LIKE '$searchq%' ";
+	$r = mysqli_query($conn,$result1);
+  $count = mysqli_num_rows($r);
+  echo $count;
+}
+else
+{
+	$result ="select * from additem where available = 1";
 $r = mysqli_query($conn,$result);
 $count = mysqli_num_rows($r);
+}
+ 
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -54,13 +67,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<li><a  href="location.php">Location</a>
 					
 				</li>
+				<li><a  href="review.php">Purchase History</a>
+					
+				</li>
 		 </ul> 
 		 <!---->
 		 <div class="search-in" >
 			<div class="search" >
-						<form action="search.php">
-							<input type="text" value="Keywords" name="search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Keywords';}" class="text">
-							<input type="submit" value="SEARCH">
+						<form action="productcust.php" method="post">
+							<input type="text" value="Keywords" name="search"  class="text">
+							<input type="submit" value="SEARCH" name="">
 						</form>
 							<div class="close-in"><img src="images/close.png" alt="" /></div>
 					</div>
@@ -202,54 +218,41 @@ $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + 
 					<div class="of-left-in">
 								<h3 class="best">Recommended Products </h3>
 							</div>
+							<?php
+							$query = "select  * from orderplace where customername = '{$_SESSION['name']}' limit 3";
+							$d = mysqli_query($conn,$query);
+							//$tow1 = mysqli_fetch_assoc($d);
+							while ($tow1 =  mysqli_fetch_assoc($d))
+							{
+								$pname = $tow1['pname'];
+								//echo $pname;
+								$q = "select  * from additem where ProductName = '$pname' ";
+								$e = mysqli_query($conn,$q);
+								$tow2 =  mysqli_fetch_assoc($e);
+								$category =  $tow2['Category'];
+								$q2 = "select  * from additem where Category = '$category' and status=1 ";
+								$e2 = mysqli_query($conn,$q2);
+								while($tow3 = mysqli_fetch_assoc($e2))
+								{
+									//echo $tow3['ProductName'] ;
+							
+
+							?>
 					<div class="product-go">
 						<div class=" fashion-grid">
-									<a href="single.html"><img class="img-responsive " src="images/be.jpg" alt=""></a>
+									<a href="single.html"><img class="img-responsive " src="<?php 
+	   		     		$filepath = $tow3['img_path'];  print $filepath; ?>" alt=""></a>
 									
 								</div>
 							<div class=" fashion-grid1">
-								<h6 class="best2"><a href="single.html" >Lorem ipsum dolor sit
-amet consectetuer  </a></h6>
+								<h6 class="best2"><a href="single.html" ><?php echo $tow3['ProductName']; ?></a></h6>
 								
-								<span class=" price-in1"> $40.00</span>
-							</div>
-								
-							<div class="clearfix"> </div>
-							</div>
-							<div class="product-go">
-						<div class=" fashion-grid">
-									<a href="single.html"><img class="img-responsive " src="images/be1.jpg" alt=""></a>
-									
-								</div>
-							<div class="fashion-grid1">
-								<h6 class="best2"><a href="single.html" >Lorem ipsum dolor sit
-amet consectetuer </a></h6>
-								
-								<span class=" price-in1"> $40.00</span>
+								<span class=" price-in1"><?php echo "Rs". $tow3['Price']; ?> </span>
 							</div>
 								
 							<div class="clearfix"> </div>
 							</div>
-							<div class="product-go">
-						<div class=" fashion-grid">
-									<a href="single.html"><img class="img-responsive " src="images/be2.jpg" alt=""></a>
-									
-								</div>
-							<div class=" fashion-grid1">
-								<h6 class="best2"><a href="single.html" >Lorem ipsum dolor sit
-amet consectetuer </a></h6>
-								<ul class="star-footer">
-									<li><a href="#"><i> </i></a></li>
-									<li><a href="#"><i> </i></a></li>
-									<li><a href="#"><i> </i></a></li>
-									<li><a href="#"><i> </i></a></li>
-									<li><a href="#"><i> </i></a></li>
-								</ul>
-								<span class=" price-in1"><small>$70.00</small> $40.00</span>
-							</div>
-								
-							<div class="clearfix"> </div>
-							</div>
+							<?php }} ?>
 				</div>
 
 				</div>
@@ -313,7 +316,7 @@ amet consectetuer </a></h6>
 	   		     		
 	   		     	</div>
 	   		     
-	   		     <?php } ?>	
+	   		     <?php }  ?>	
 	   		     	</div>
 		        	</div>
 		        	</div>

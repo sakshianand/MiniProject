@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once("Connection.php");
-$result ="select * from ecart where reg ='{$_SESSION['reg']}'";
+$result ="select * from review where customer ='{$_SESSION['reg']}'";
 $res = mysqli_query($conn,$result);
 $row_cnt = mysqli_num_rows($res);
 ?>
@@ -126,10 +126,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 <!---->
 <div class="container">
-	<h6 class="dress"><a href="index.html">Home</a> <i> </i> Checkout </h6>
+	<h6 class="dress"><a href="productcust.php">Home</a> <i> </i> Review </h6>
 </div>
 <div class="back">
-	<h2>CHECKOUT</h2>
+	<h2>REVIEW</h2>
 </div>
 		<!---->
 		<div class="product">
@@ -153,98 +153,52 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="check-out">	 
 			
 		 <div class=" cart-items">
-			 <h3>My Shopping Bag</h3>
-				<script>$(document).ready(function(c) {
-					$('.close1').on('click', function(c){
-						$('.cart-header').fadeOut('slow', function(c){
-							$('.cart-header').remove();
-						});
-						});	  
-					});
-			   </script>
-			<script>$(document).ready(function(c) {
-					$('.close2').on('click', function(c){
-						$('.cart-header1').fadeOut('slow', function(c){
-							$('.cart-header1').remove();
-						});
-						});	  
-					});
-			   </script>
-				<div id="full"></div>
+			 <h3>Purchased Products</h3>
+				
+				
 				  <div class="in-check" >
 		  <ul class="unit">
 		  
-			<li><span>Item</span></li>
+			
 		
 			<li><span>Product Name</span></li>
-
-			<li><span>Price</span></li>
-			<li><span>Seller Name</span></li>
-			<li><span>Contact Number</span></li>
+<li><span>Write a review</span></li>
+<li><span></span></li>
+			
 			
 			<div class="clearfix"> </div>
 		  </ul>
-		  
 		   	<?php
 		   	while($row=mysqli_fetch_array($res))
         {
          ?>
-
+		<form method="post" action="swear1.php">
 		  <ul class="cart-header">
-		   
-			<li class="ring-in"><a href="single.html" ><img src="<?php 
-	   		     		$filepath = $row['img_path'];  print $filepath; ?>" class="img-responsive" alt=""></a>
-			</li>
+		 
+			<li><span><?php $ProductName = $row['pname']; 
+			$_SESSION['pname']=$ProductName;echo'<input type="text" name="comment" value="'.$ProductName.'" readonly    style="background-color: #3CBC8D";> '; ?></span></li>
+			<li><span><?php //$p = "select * from review where pname='$ProductName' and customer ='{$_SESSION['reg']}'"; $quer=mysqli_query($conn,$p); $mow=mysqli_fetch_assoc($quer); 
+			$cmnt = $row['review']; if($cmnt== NULL) echo'<input type="text" value="" name="swear">';  else echo '<textarea rows="3" cols="18"  disabled>'.$cmnt.'</textarea>';
+				
+			echo'</span></li>
 			
-			<li><span><?php $ProductName = $row['ProductName']; print $ProductName; ?></span></li>
-			
-			<li><span><?php $price = $row['Price']; print $price; ?></span></li>
+			<li><span>';
+			if($cmnt== NULL){echo'<input type="submit" value="submit">';}?></a></span></li></form>
 			<li>
 			<span>
-			<?php
-							$reg[] = $row['reg']; 
-							//echo $row['reg'];
-							$a = "select * from additem where ProductName = '$ProductName'";
-							$b= mysqli_query($conn,$a);
-							$tow = mysqli_fetch_assoc($b);
-							$regi=$tow['reg'];
-							$c= "select * from seller where Reg = '$regi'";
-							$d=mysqli_query($conn,$c);
-							$tow1 = mysqli_fetch_assoc($d);
-							echo $tow1['Name'];
-							//$phone = $tow['Phone'];
-							//$name = $tow['Name']; echo $name;
-							
-
-			?>
+			
 			</span>
 			</li>
 				<li>
 			<span>
-			<?php
-							$reg[] = $row['reg']; 
-							//echo $row['reg'];
-							$a = "select * from additem where ProductName = '$ProductName'";
-							$b= mysqli_query($conn,$a);
-							$tow = mysqli_fetch_assoc($b);
-							$regi=$tow['reg'];
-							$c= "select * from seller where Reg = '$regi'";
-							$d=mysqli_query($conn,$c);
-							$tow1 = mysqli_fetch_assoc($d);
-							echo $tow1['Phone'];
-							//$phone = $tow['Phone'];
-							//$name = $tow['Name']; echo $name;
-							
-
-			?>
+			
 			</span>
 			</li>
-			<li><span><a class = "remove" href="" id="<?php echo $row["id"]; ?>">Remove</a></span></li>
 			<div class="clearfix"> </div>
 			</ul>
 			<?php } ?>
 
-
+ 
 		</div>
 			 </div>
 					  
@@ -254,19 +208,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			
 			
 			
-			<li><span><?php
-$result ="select  * from ecart where reg ='{$_SESSION["reg"]}'";
-$r = mysqli_query($conn,$result);
-$total=0;
-while ($row =  mysqli_fetch_array($r))
-{
-	 $total +=  $row['Price'];}
-	 echo "Total: ";
-     echo $total;
-     $_SESSION['a']=$total;
-
- ?></span></li>
-	 <li><span><a href="checkout.php"><button>Next</button></a></span></li>
+			<li><span></span></li>
+	 <li><span><a href="productcust.php"><button>Back</button></a></span></li>
 			
 			<div class="clearfix"> </div>
 			</ul>
@@ -283,16 +226,7 @@ while ($row =  mysqli_fetch_array($r))
 			<!---->
 				
 <!---->
-<script type="text/javascript">
-	      $(document).ready(function(){
-    $(".remove").click(function(){
-     var id = $(this).attr('id');
-   //alert(id);
-     $("#full").load("remove.php",{'id': id});
-
-    });
-  });
-	      </script>
+	
 <!---->
 </body>
 </html>

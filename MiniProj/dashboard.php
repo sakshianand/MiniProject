@@ -15,6 +15,8 @@ session_start();
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Logo</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="vieworder.php">View Orders</a></li>
+       <li><a href="commentseller.php">See Reviews</a></li>
         <li><a href="updateSeller.html">Update Info</a></li>
         <li><a href="logout.php">Logout</a></li>
       </ul>

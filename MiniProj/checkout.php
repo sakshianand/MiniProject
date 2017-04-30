@@ -183,20 +183,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		  </ul>
 		  
 		  <ul class="cart-header">
-		   
-			<li class="ring-in"><span><input type="radio">Cash On Delivery</input></span>
+		   <form method="post" action="place.php">
+			<li class="ring-in"><span><input type="radio" name ="cod" value="cash on delivery">Cash On Delivery</span>
+			</li>
+			<li class="ring-in"><span><input type="radio" name="cod" value="paytm">Paytm</span>
 			</li>
 			
 			<div class="clearfix"> </div>
 			</ul>
-			  <ul class="cart-header">
-		   
-			<li class="ring-in"><span><input type="radio">Paytm</input></span>
-			</li>
-			
-			<div class="clearfix"> </div>
-			</ul>
-			
+			 
 
  
 		</div>
@@ -224,7 +219,7 @@ while ($row =  mysqli_fetch_array($r))
 			
 			<div class="clearfix"> </div>
 			</ul>
-
+</form>
 
 
 		
